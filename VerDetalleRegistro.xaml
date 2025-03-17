@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="examen2.VerDetalleRegistro"
+             Title="Ver Detalle Registro"
+             BackgroundColor="#191919">
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="FillAndExpand">
+        <Label
+            Text="{Binding Titulo}"
+            TextColor="White"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        <Label
+            Text="{Binding Descripcion}"
+            TextColor="White"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        <Label
+            Text="{Binding Fecha}"
+            VerticalOptions="Center"
+            TextColor="White"
+            HorizontalOptions="Center"/>
+        <Image x:Name="imagen"
+               Source="/Users/johnsilvestre/Library/Developer/CoreSimulator/Devices/E575E73D-2115-436B-A1D3-58EE6B17772F/data/Containers/Data/Application/C46D823E-49E7-44A6-B53A-D2508267C6B5/Library/5BCC4B7D-EEF7-4F3F-96D1-43177343258B.jpeg"
+               Margin="10"/>
+    </StackLayout>
+</ContentPage>

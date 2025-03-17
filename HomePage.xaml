@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="examen2.HomePage"
+             BackgroundColor="#191919"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Registro Ambulancia"
+                   HorizontalOptions="Start"
+                   FontSize="18"
+                   TextColor="White"/>
+            <ImageButton Source="agregar.png"
+                         HorizontalOptions="EndAndExpand"
+                         HeightRequest="30"
+                         WidthRequest="30"
+                         x:Name="btnAgregar"
+                         Clicked="btnAgregar_Clicked"/>
+        </StackLayout>
+        <CollectionView x:Name="lstRegistros"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="10"
+                                 HorizontalOptions="FillAndExpand"
+                                 BindingContext="{Binding .}">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ambulancia.png"
+                            Margin="5"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               Aspect="AspectFill"/>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="FillAndExpand"
+                                     Margin="10">
+                            <Label Text="{Binding Titulo}"
+                                   TextColor="White"
+                                   FontSize="18"/>
+                            <Label Text="{Binding Descripcion}"
+                                   TextColor="White"
+                                   FontSize="14"/>
+
+                        </StackLayout>
+                    </StackLayout>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
